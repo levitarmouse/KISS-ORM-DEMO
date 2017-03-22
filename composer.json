@@ -1,11 +1,9 @@
 {
-    "name": "levitarmouse/kiss_orm",
-    "description": "Active record ORM",
-    "type": "library",
+    "name": "levitarmouse/kiss_orm_demo",
+    "description": "Active record ORM demo",
+    "type": "project",
     "require":{
-        "php" : "^5.5 || ^7.0",
-        "levitarmouse/kiss-orm": "1.1.*"
-    },
+        "levitarmouse/kiss_orm": "1.*" },
     "authors": [
         {
             "name": "Gabriel Prieto",
