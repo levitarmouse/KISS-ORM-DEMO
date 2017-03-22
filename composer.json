@@ -1,0 +1,16 @@
+{
+    "name": "KISS-ORM-DEMO",
+    "description": "demo de uso KISS-ORM",
+    "type": "project",
+    "prefer-stable": false,
+    "minimum-stability":"dev",
+    "require": {
+        "levitarmouse/kiss-orm": "1.0.*"
+    },
+    "authors": [
+        {
+            "name": "Gabriel",
+            "email": "levitarmouse@gmail.com"
+        }
+    ]
+}
