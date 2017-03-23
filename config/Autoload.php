@@ -1,19 +1,23 @@
 <?php
 
-function autoloadPSR_0($sFullClassName) {
+function demoAutoloaderPSR0($sFullClassName) {
     $path = realpath(__DIR__ . "/../") . "/";
 
-    $path .= 'src/';
+    $paths = array();
+    $paths[] =  'src/';
+    $paths[] =  'vendor/';
 
     $aSteps = explode('\\', $sFullClassName);
     if ($aSteps) {
-        $sFile = $path . implode('/', $aSteps) . '.php';
+        foreach ($paths as $ruta ) {
+            $sFile = $ruta . implode('/', $aSteps) . '.php';
 
-        if (file_exists($sFile)) {
-            require_once $sFile;
-            return;
+            if (file_exists($sFile)) {
+                require_once $sFile;
+                return;
+            }            
         }
     }
 }
 
-spl_autoload_register('autoloadPSR_0');
+spl_autoload_register('demoAutoloaderPSR0');

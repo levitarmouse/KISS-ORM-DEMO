@@ -1,14 +1,14 @@
 <?php
 
+include_once './config/Autoload.php';
+
 $continue0 = true;
 $continue1 = true;
 $continue2 = true;
 
-include_once './config/Autoload.php';
-
 $bComposer = false;
 if (file_exists('./vendor/autoload.php')) {
-    include_once './vendor/autoload.php';    
+    include_once './vendor/autoload.php';
     $bComposer = true;
 }
 
