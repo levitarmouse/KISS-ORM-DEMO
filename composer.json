@@ -1,9 +1,17 @@
 {
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/levitarmouse/KISS-ORM"
+        }
+    ],
     "name": "levitarmouse/kiss_orm_demo",
     "description": "Active record ORM demo",
+    "license": "proprietary",
     "type": "project",
-    "require":{
-        "levitarmouse/kiss_orm": "1.*" },
+    "require": {
+        "levitarmouse/kiss_orm": "dev-1.0-dev"
+    },
     "authors": [
         {
             "name": "Gabriel Prieto",
@@ -11,7 +19,9 @@
         }
     ],
     "scripts": {
-        "post-update-cmd": [],
+        "post-update-cmd": ["php -r \"shell_exec('mkdir -p config/kiss_orm');\"",
+                                 "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/kiss_orm');\"",
+                                 "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/kissGen.php');\"", ""],
         "post-package-install": [],
         "post-install-cmd": [],
         "post-autoload-dump": [],

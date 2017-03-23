@@ -1,9 +1,13 @@
 <?php
-include_once './config/config.php';
+//include_once './config/config.php';
 
 $continue0 = true;
 $continue1 = true;
 $continue2 = true;
+
+if (file_exists('./vendor/autoload.php')) {
+    include_once './vendor/autoload.php';    
+}
 
 if (!class_exists('demo\classes\User')) {
     $continue0 = false;
