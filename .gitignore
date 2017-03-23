@@ -2,3 +2,5 @@
 /nbproject/*
 /kissGen.php
 /composer.lock
+/descriptors
+/src
