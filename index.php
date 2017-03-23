@@ -6,8 +6,10 @@ $continue2 = true;
 
 include_once './config/Autoload.php';
 
+$bComposer = false;
 if (file_exists('./vendor/autoload.php')) {
     include_once './vendor/autoload.php';    
+    $bComposer = true;
 }
 
 if (!class_exists('demo\classes\User')) {
@@ -28,6 +30,15 @@ if (!class_exists('demo\classes\User')) {
 <html>
     <head></head>
     <body>
+        
+        <?php if (!$bComposer) { ?>
+        <h2>Aún no ejecutó composer install en su proyecto!</h2>
+        
+        <?php 
+            die;
+            }
+        ?>
+        
         <?php
         if (!$continue0 || !$continue1 || !$continue2) {
             ?>
