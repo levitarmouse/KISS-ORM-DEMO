@@ -3,6 +3,10 @@
         {
             "type": "git",
             "url": "https://github.com/levitarmouse/KISS-ORM"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/levitarmouse/KISS-CORE"
         }
     ],
     "name": "levitarmouse/kiss_orm_demo",
@@ -10,7 +14,8 @@
     "license": "proprietary",
     "type": "project",
     "require": {
-        "levitarmouse/kiss_orm": "dev-1.0-dev"
+        "levitarmouse/kiss_orm": "dev-1.0-dev",
+        "levitarmouse/kiss_core": "dev-1.*"
     },
     "authors": [
         {
@@ -20,12 +25,14 @@
     ],
     "scripts": {
         "post-update-cmd": ["php -r \"shell_exec('mkdir -p config/');\"",
-                                 "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/');\"",
-                                 "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/kissGen.php');\"", ""],
-        "post-package-install": [],
+                            "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/database.ini');\"",
+                            "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/tables.ini');\"",
+                            "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/kissGen.php');\"", ""],
         "post-install-cmd": ["php -r \"shell_exec('mkdir -p config/');\"",
-                                 "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/');\"",
-                                 "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/kissGen.php');\"", ""],
+                             "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/database.ini');\"",
+                             "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/tables.ini');\"",
+                             "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/kissGen.php');\"", ""],
+        "post-package-install": [],
         "post-autoload-dump": [],
         "post-create-project-cmd": []
     }
