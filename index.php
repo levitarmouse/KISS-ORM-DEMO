@@ -207,10 +207,11 @@ if (!class_exists('demo\classes\User')) {
 
                 $user->getById(5);
 
-                $attribs = $user->getAttribs();
-
-                echo json_encode($attribs);
-
+//                $filterDto = new \levitarmouse\kiss_orm\dto\GetByFilterDTO();
+//                $filterDto->logued = 1;
+//                
+//                $user->getByFilter($filterDto);
+                
                 $user->getAll();
 
                 while ($cu = $user->getNext()) {
@@ -221,7 +222,7 @@ if (!class_exists('demo\classes\User')) {
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
-                echo "ahora ordenados" . '<br>';
+                echo "<u>ahora ordenados</u>" . '<br>';
 
                 $filterDto = new levitarmouse\kiss_orm\dto\GetByFilterDTO();
                 $orderDto = new \levitarmouse\kiss_orm\dto\OrderByDTO();
