@@ -24,13 +24,13 @@
         }
     ],
     "scripts": {
-        "post-update-cmd": ["php -r \"shell_exec('mkdir -p config/');\"",
-                            "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/');\"",
+        "post-update-cmd": ["php -r \"shell_exec('mkdir -p config/kissOrm');\"",
+                            "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/kissOrm/');\"",
                             "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/tables.ini .');\"",
                             "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/kissGen.php .');\"", ""],
         "post-package-install": [],
         "post-install-cmd": ["php -r \"shell_exec('mkdir -p config/');\"",
-                             "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/');\"",
+                             "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/kissOrm/');\"",
                              "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/tables.ini .');\"",
                              "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/kissGen.php .');\"", ""],
         "post-autoload-dump": [],
