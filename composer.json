@@ -15,7 +15,7 @@
     "type": "project",
     "require": {
         "levitarmouse/kiss_orm": "dev-1.0-dev",
-        "levitarmouse/kiss_core": "dev-1.*"
+        "levitarmouse/core": "1.1.4"
     },
     "authors": [
         {
@@ -24,15 +24,24 @@
         }
     ],
     "scripts": {
-        "post-update-cmd": ["php -r \"shell_exec('mkdir -p config/kissOrm');\"",
-                            "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/kissOrm/');\"",
-                            "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/tables.ini .');\"",
-                            "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/kissGen.php .');\"", ""],
-        "post-package-install": [],
+        "post-update-cmd": ["php -r \"shell_exec('mkdir -p config/kissorm');\"",
+                             "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/tables.ini .');\"",
+                             "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/kissGen.php .');\"",
+                             "php -r \"shell_exec('cd config/kissorm; ln -s ../../vendor/levitarmouse/kiss_orm/config/config.php .');\"",
+                             "php -r \"shell_exec('cd config/kissorm; ln -s ../../vendor/levitarmouse/kiss_orm/config/database.ini .');\"",
+                             ""],
+        "post-package-install": ["php -r \"shell_exec('mkdir -p config/');\"",
+                             "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/tables.ini .');\"",
+                             "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/kissGen.php .');\"",
+                             "php -r \"shell_exec('cd config/kissorm; ln -s ../../vendor/levitarmouse/kiss_orm/config/config.php .');\"",
+                             "php -r \"shell_exec('cd config/kissorm; ln -s ../../vendor/levitarmouse/kiss_orm/config/database.ini .');\"",
+                             ""],
         "post-install-cmd": ["php -r \"shell_exec('mkdir -p config/');\"",
-                             "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/config/database.ini ./config/kissOrm/');\"",
-                             "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/tables.ini .');\"",
-                             "php -r \"shell_exec('cp ./vendor/levitarmouse/kiss_orm/kissGen.php .');\"", ""],
+                             "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/tables.ini .');\"",
+                             "php -r \"shell_exec('ln -s ./vendor/levitarmouse/kiss_orm/kissGen.php .');\"",
+                             "php -r \"shell_exec('cd config/kissorm; ln -s ../../vendor/levitarmouse/kiss_orm/config/config.php .');\"",
+                             "php -r \"shell_exec('cd config/kissorm; ln -s ../../vendor/levitarmouse/kiss_orm/config/database.ini .');\"",
+                             ""],
         "post-autoload-dump": [],
         "post-create-project-cmd": []
     }
