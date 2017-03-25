@@ -12,6 +12,12 @@ if (file_exists('./vendor/autoload.php')) {
     $bComposer = true;
 }
 
+////////////////////////////////////////////
+// INCLUSIÓN NECESARIA 
+// Previo al primer uso de kiss_orm
+////////////////////////////////////////////
+include_once './config/kissorm/Bootstrap.php';
+
 if (!class_exists('demo\classes\User')) {
     $continue0 = false;
 } else {
