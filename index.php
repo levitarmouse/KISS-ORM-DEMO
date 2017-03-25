@@ -33,6 +33,7 @@ if (!class_exists('demo\classes\User')) {
             $continue1 = false;
         }
     } catch (Exception $ex) {
+        echo $ex->getMessage();
         $continue2 = false;
     }
 }
@@ -59,7 +60,6 @@ if (!class_exists('demo\classes\User')) {
                         <h3>Demostración KISS-ORM</h3>
                         <b>Demostración basada en el supuesto de que cuenta con una base de datos MySql
                             con una tabla de usuarios llamada Users</b><br><br>
-                            No es un template para reutilizar!
                             <br>
                         <hr>
                         Aviso.<br><br>

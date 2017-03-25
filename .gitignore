@@ -3,3 +3,6 @@
 /composer.lock
 /descriptors
 /nbproject/*
+/tables.ini
+/config/kissorm/Bootstrap.php
+/config/kissorm/database.ini
