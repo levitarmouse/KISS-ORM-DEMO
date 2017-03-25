@@ -16,14 +16,17 @@ if (file_exists('./vendor/autoload.php')) {
 // INCLUSIÓN NECESARIA 
 // Previo al primer uso de kiss_orm
 ////////////////////////////////////////////
-include_once './config/kissorm/Bootstrap.php';
+if (file_exists('./config/kissorm/Bootstrap.php')) {
+    include_once './config/kissorm/Bootstrap.php';    
+}
 
 if (!class_exists('demo\classes\User')) {
     $continue0 = false;
 } else {
     
     try {
-        $user = new demo\classes\User();
+//        $user = new demo\classes\User();
+        $user = new \prueba\nivel2\User();
 
         if (!is_a($user, '\levitarmouse\kiss_orm\EntityModel')) {
             $continue1 = false;
@@ -96,7 +99,7 @@ if (!class_exists('demo\classes\User')) {
 
                             <u>Ejemplo de un descriptor para el modelo <b>RDMS</b>:</u><br>
                             <br>
-                            El mismo debe ser el contenido de un archivo INI ubicado <br>
+                            El mismo es el contenido de un archivo INI ubicado <br>
                             en el mismo lugar donde se encuentra la clase que describe.<br>
                             El nombre del archivo INI debe ser igual al nombre de la Clase<br>
                             <br>
