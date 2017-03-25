@@ -1,5 +1,5 @@
 /vendor/*
-/nbproject/*
+
 /kissGen.php
 /composer.lock
 /descriptors
