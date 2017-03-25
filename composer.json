@@ -30,8 +30,8 @@
                              "php -r \"shell_exec('cd ./config/kissorm/; ln -s ../../vendor/levitarmouse/kiss_orm/config/Bootstrap.php .');\"",
                              "php -r \"shell_exec('cd ./config/kissorm/; ln -s ../../vendor/levitarmouse/kiss_orm/config/database.ini .');\"",
                              ""],
-        "post-package-install": [""],
-        "post-install-cmd": [""],
+        "post-package-install": [],
+        "post-install-cmd": [],
         "post-autoload-dump": [],
         "post-create-project-cmd": []
     }

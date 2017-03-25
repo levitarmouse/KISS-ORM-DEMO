@@ -5,7 +5,6 @@ function demoAutoloaderPSR0($sFullClassName) {
 
     $paths = array();
     $paths[] =  'src/';
-//    $paths[] =  'vendor/';
 
     $aSteps = explode('\\', $sFullClassName);
     if ($aSteps) {
