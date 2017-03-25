@@ -214,7 +214,7 @@ if (!class_exists('demo\classes\User')) {
         <?php
         if ($continue0 && $continue1 && $continue2) {
             if ($continue1) {
-
+                
                 $user->getAll();
 
                 while ($cu = $user->getNext()) {
