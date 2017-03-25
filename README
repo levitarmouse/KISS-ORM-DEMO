@@ -1,16 +1,12 @@
-Ejemplo de utilización de la librería levitarmouse/kiss_orm
+# Ejemplo de utilización de la librería levitarmouse/kiss_orm
 
-<b>Demostración basada en el supuesto de que cuenta con una base de datos MySql
-con una tabla de usuarios llamada Users</b><br><br>
-No es un template para reutilizar!
-<br>
-<br>
+###### Demostración basada en el supuesto de que cuenta con una base de datos MySql
+###### con una tabla de usuarios llamada Users
+## **No es un template para reutilizar!**
 
-<br>
-Detalles importantes:
-<br>
-Es necesario incluir el siguiente código en el controlador frontal PHP que hace uso luego de kiss-orm:
 
-if (file_exists('./config/kissorm/Bootstrap.php')) {
-    include_once './config/kissorm/Bootstrap.php';
-}
+## Es **importante** y necesario incluir el siguiente código en el controlador frontal PHP a través del cuál luego se hace uso de kiss-orm:
+
+###### if (file_exists('./config/kissorm/Bootstrap.php')) {
+######     include_once './config/kissorm/Bootstrap.php';
+###### }
