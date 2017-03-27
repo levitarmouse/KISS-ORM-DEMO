@@ -164,11 +164,17 @@ if (!class_exists('demo\classes\User')) {
                             <br>
                             <br>
                             <b>Respuesta 1 </b><br>
-                            Para NO repetir o incluso no ejecutar estos pasos una sola vez debe usar <b>kissGen!.</b> <br>Seguir los siguientes pasos: <br>
+                            Para NO repetir o incluso no ejecutar estos pasos una sola vez debe usar: 
+                            <br><br>
+                            <span style="font-weight: bold;
+                                         font-size: 3em;
+                                         font-family: monospace;
+                                         position: relative; left: 35%;">kissGen!.</span>
+                                         <br><u><b>Seguir los siguientes pasos:</b></u><br>
                             <ol>
                                 <li style="padding: 5px;">
                                     Configurar correctamente el acceso a
-                                    la base de datos en el archivo <b>config/database.ini</b>
+                                    la base de datos en el archivo <b>config/kissorm/database.ini</b>
                                 </li>
                                 <li style="padding: 5px;">
                                     Probar la configuración con el comando:<br>

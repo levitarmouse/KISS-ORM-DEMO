@@ -3,10 +3,6 @@
         {
             "type": "git",
             "url": "https://github.com/levitarmouse/KISS-ORM"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/levitarmouse/KISS-CORE"
         }
     ],
     "name": "levitarmouse/kiss_orm_demo",
