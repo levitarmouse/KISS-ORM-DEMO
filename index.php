@@ -59,7 +59,7 @@ if (!class_exists('demo\classes\User')) {
                     <td style="width: 60%">
                         <h3>Demostración KISS-ORM</h3>
                         <b>Demostración basada en el supuesto de que cuenta con una base de datos MySql
-                            con una tabla de usuarios llamada Users</b><br><br>
+                            con una Tabla o Vista llamada Users</b><br><br>
                             <br>
                         <hr>
                         Aviso.<br><br>
@@ -146,6 +146,7 @@ if (!class_exists('demo\classes\User')) {
                                         <ol>
                                             <li><b>userid</b>: nombre del atributo en la clase User. No es requerido que coincida con la DB</li>
                                             <li><b>USERID</b>: nombre de campo en la tabla Users</li>
+                                            <li><b>; HASTA EOL</b>: Descripción del campo; Validaciones automáticas en versiones futuras</li>
                                         </ol>
                                     </li>
                                     <li>
@@ -160,11 +161,11 @@ if (!class_exists('demo\classes\User')) {
                             </span>
 
                             <br>
-                            <b>Pregunta 1?</b><br> Es necesario hacer esto con cada elemento de la DB que deseo mapear?
+                            <b>* Pregunta?</b><br> Es necesario hacer esto con cada elemento de la DB que deseo mapear?
                             <br>
                             <br>
-                            <b>Respuesta 1 </b><br>
-                            Para NO repetir o incluso no ejecutar estos pasos una sola vez debe usar: 
+                            <b>* Respuesta</b><br>
+                            Para NO repetir o incluso ejecutar estos pasos una sola vez debe usar: 
                             <br><br>
                             <span style="font-weight: bold;
                                          font-size: 3em;
@@ -173,23 +174,23 @@ if (!class_exists('demo\classes\User')) {
                                          <br><u><b>Seguir los siguientes pasos:</b></u><br>
                             <ol>
                                 <li style="padding: 5px;">
-                                    Configurar correctamente el acceso a
-                                    la base de datos en el archivo <b>config/kissorm/database.ini</b>
+                                    Configurar el acceso a
+                                    la base de datos en el link simbólico: <b>config/kissorm/database.ini</b>
                                 </li>
-                                <li style="padding: 5px;">
+<!--                                <li style="padding: 5px;">
                                     Probar la configuración con el comando:<br>
                                     <b>$ php kissGen.php testsCfg</b>
-                                </li>
+                                </li>-->
                                 <li style="padding: 5px;">
                                     Modificar el archivo <b>./tables.ini</b><br>
                                     Indicando el nombre de cada tabla que deseas mapear y el nombre de la Clase a través de la cuál
-                                    gestionarás dicha tabla.
+                                    gestionarás dicha tabla. Adicionalmente, se puede configurar el namespace de dicha clase.
                                 </li>
                                 <li style="padding: 5px;">
                                     Como último paso ejecutar el comando:
                                     <b>$ php kissGen.php</b><br>
-                                    El mismo leerá la lista de tablas del archivo tables.ini y por cada uno de ellos
-                                    creará el descriptor y la clase PHP. Almacenando todo lo generado en <b>./src/classes</b>
+                                    El mismo leerá la lista de tablas del archivo tables.ini y por cada uno de ellas
+                                    creará el descriptor y la clase PHP. Almacenando lo generado en <b>./descriptors</b>
                                     <br>
                                     <b>Importante!</b><br>
                                     EL generado automático del descriptor y la clase, creará un un descriptor con atributos de clase
@@ -203,8 +204,8 @@ if (!class_exists('demo\classes\User')) {
                                 </li>
                             </ol>
 
-                            También puede usar KissGen indicando por linea de comandos que tabla desea mapear!.
-                            Simplemente ejecute: <b>$ php kissGen.php t:tableName</b>
+<!--                            También puede usar KissGen indicando por linea de comandos que tabla desea mapear!.
+                            Simplemente ejecute: <b>$ php kissGen.php t:tableName</b>-->
 
                             <br>
                             <br>
