@@ -1,8 +1,7 @@
-/vendor/*
-/kissGen.php
 /composer.lock
+/config/kissorm/*
 /descriptors
+/kissGen.php
 /nbproject/*
 /tables.ini
-/config/kissorm/Bootstrap.php
-/config/kissorm/database.ini
+/vendor/*
