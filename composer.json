@@ -11,6 +11,7 @@
     "type": "project",
     "minimum-stability": "dev",
     "require": {
+        "php" : ">=5.3.3",
         "levitarmouse/kiss_orm": "dev-dev"
     },
     "authors": [
