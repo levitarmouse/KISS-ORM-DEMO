@@ -273,7 +273,6 @@ if (!class_exists('demo\classes\User')) {
                     echo json_encode($cu->real_name) . '<br>';
                 }
             }
-
         }
         ?>
     </body>
