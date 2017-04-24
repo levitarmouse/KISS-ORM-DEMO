@@ -27,9 +27,9 @@
                              "php -r \"shell_exec('cd ./config/kissorm/; ln -s ../../vendor/levitarmouse/kiss_orm/config/Bootstrap.php .');\"",
                              "php -r \"shell_exec('cd ./config/kissorm/; cp -rp ../../vendor/levitarmouse/kiss_orm/config/database.ini.dist ./database.ini');\"",
                              ""],
-        "post-package-install": ["echo 'pasó por aca1';"],
-        "post-install-cmd": ["echo 'pasó por aca2';"],
-        "post-autoload-dump": ["echo 'pasó por aca3';"],
-        "post-create-project-cmd": ["echo 'pasó por aca4';"]
+        "post-package-install": [""],
+        "post-install-cmd": [""],
+        "post-autoload-dump": [""],
+        "post-create-project-cmd": [""]
     }
 }
