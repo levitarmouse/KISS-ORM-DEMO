@@ -48,10 +48,29 @@ if (!class_exists('demo\classes\User')) {
             <?php
             die;
         }
+        
+        $continue3 = true;
+        try {
+            
+            $model = new levitarmouse\kiss_orm\GenericEntity();
+            $dbTest = 'select now() as time';
+            
+            $result = $model->getMapper()->select($dbTest);
+            
+            echo "La fecha y hora actual en su sistema es :".$result[0]['time'];
+            echo "<br>";
+            echo "<br>";
+        
+        }
+        catch (\Exception $ex) {
+            echo $ex->getMessage();
+            $continue3 = false;
+        }
+        
         ?>
 
         <?php
-        if (!$continue0 || !$continue1 || !$continue2) {
+        if (!$continue0 || !$continue1 || !$continue2 || !$continue3) {
             ?>
             <table style="width: 100%">
                 <tr >
@@ -89,7 +108,7 @@ if (!class_exists('demo\classes\User')) {
                             Adicionalmente;
                         <?php } ?>
 
-                        <?php if (!$continue0 || !$continue1 || !$continue2) { ?>
+                        <?php if (!$continue0 || !$continue1 || !$continue2  || !$continue3) { ?>
 
                             Debe crear un descriptor para la clase!.<br>
                             Es la configuración a través de la cual el ORM conoce
@@ -173,10 +192,17 @@ if (!class_exists('demo\classes\User')) {
                                          position: relative; left: 35%;">kissGen!.</span>
                                          <br><u><b>Seguir los siguientes pasos:</b></u><br>
                             <ol>
+                                <?php if ( !$continue3) { ?>
+                                <li style="padding: 5px; color: red; font-weight: bold;">
+                                    Configurar el acceso a
+                                    la base de datos en : <b>config/kissorm/database.ini</b>
+                                </li>                                    
+                                <?php } else { ?>
                                 <li style="padding: 5px;">
                                     Configurar el acceso a
-                                    la base de datos en el link simbólico: <b>config/kissorm/database.ini</b>
+                                    la base de datos en : <b>config/kissorm/database.ini</b>
                                 </li>
+                                <?php } ?>
 <!--                                <li style="padding: 5px;">
                                     Probar la configuración con el comando:<br>
                                     <b>$ php kissGen.php testsCfg</b>
@@ -219,34 +245,35 @@ if (!class_exists('demo\classes\User')) {
         <?php } ?>
 
         <?php
-        if ($continue0 && $continue1 && $continue2) {
+        if ($continue0 && $continue1 && $continue2 && $continue3) {
             if ($continue1) {
                 
-                try {
-                    $user->getAll();
+                $user->getAll();
 
-                    while ($cu = $user->getNext()) {
-                        echo json_encode($cu->real_name) . '<br>';
-                    }
+                echo "<b>El contenido de su tabla users es el siguiente:</b><br>";
+                while ($cu = $user->getNext()) {
+                    echo "<span style='font-size: 14px;'>";
+                    $cont = json_encode($cu->getValues()) . '<br>';
+                    $cont = str_replace('","', '", "', $cont);
+                    echo $cont;
+                    echo "</span><br>";
+                }
 
-                    echo "<br>";
-                    echo "<br>";
-                    echo "<u>ahora ordenados</u>" . '<br>';
+                echo "<br>";
+                echo "<br>";
+                echo "<u>ahora ordenados</u>" . '<br>';
 
-                    $filterDto = new levitarmouse\kiss_orm\dto\GetByFilterDTO();
-                    $orderDto = new \levitarmouse\kiss_orm\dto\OrderByDTO();
-                    $orderDto->real_name = \levitarmouse\kiss_orm\dto\OrderByDTO::ASC;
-                    $user->getByFilter($filterDto, $orderDto);
-
-                    while ($cu = $user->getNext()) {
-                        echo json_encode($cu->real_name) . '<br>';
-                    }
-            }
-            catch (\Exception$ex) {
+                $filterDto = new levitarmouse\kiss_orm\dto\GetByFilterDTO();
+                $orderDto = new \levitarmouse\kiss_orm\dto\OrderByDTO();
                 
-                    echo $ex->getMessage();
-                }                
+                $orderDto->real_name = \levitarmouse\kiss_orm\dto\OrderByDTO::ASC;
+                $user->getByFilter($filterDto, $orderDto);
+
+                while ($cu = $user->getNext()) {
+                    echo json_encode($cu->real_name) . '<br>';
+                }
             }
+
         }
         ?>
     </body>
