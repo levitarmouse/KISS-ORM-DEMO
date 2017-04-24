@@ -21,10 +21,7 @@
         }
     ],
     "scripts": {
-        "post-update-cmd":  ["php -r \"shell_exec('mkdir -p config/kissorm');\"",
-                             "php -r \"shell_exec('cp -rp ./vendor/levitarmouse/kiss_orm/scripts/post_install.sh ./kissorm_post_install.sh');\"",
-                             "php -r \"shell_exec('chmod 0775 ./config/kissorm/post_install.sh');\"",
-                             "php -r \"shell_exec('./post_install.sh');\"",
+        "post-update-cmd":  ["kissf_post_install.sh",
                              ""],
         "post-package-install": [""],
         "post-install-cmd": [""],
