@@ -222,24 +222,30 @@ if (!class_exists('demo\classes\User')) {
         if ($continue0 && $continue1 && $continue2) {
             if ($continue1) {
                 
-                $user->getAll();
+                try {
+                    $user->getAll();
 
-                while ($cu = $user->getNext()) {
-                    echo json_encode($cu->real_name) . '<br>';
-                }
+                    while ($cu = $user->getNext()) {
+                        echo json_encode($cu->real_name) . '<br>';
+                    }
 
-                echo "<br>";
-                echo "<br>";
-                echo "<u>ahora ordenados</u>" . '<br>';
+                    echo "<br>";
+                    echo "<br>";
+                    echo "<u>ahora ordenados</u>" . '<br>';
 
-                $filterDto = new levitarmouse\kiss_orm\dto\GetByFilterDTO();
-                $orderDto = new \levitarmouse\kiss_orm\dto\OrderByDTO();
-                $orderDto->real_name = \levitarmouse\kiss_orm\dto\OrderByDTO::ASC;
-                $user->getByFilter($filterDto, $orderDto);
+                    $filterDto = new levitarmouse\kiss_orm\dto\GetByFilterDTO();
+                    $orderDto = new \levitarmouse\kiss_orm\dto\OrderByDTO();
+                    $orderDto->real_name = \levitarmouse\kiss_orm\dto\OrderByDTO::ASC;
+                    $user->getByFilter($filterDto, $orderDto);
 
-                while ($cu = $user->getNext()) {
-                    echo json_encode($cu->real_name) . '<br>';
-                }
+                    while ($cu = $user->getNext()) {
+                        echo json_encode($cu->real_name) . '<br>';
+                    }
+            }
+            catch (\Exception$ex) {
+                
+                    echo $ex->getMessage();
+                }                
             }
         }
         ?>
